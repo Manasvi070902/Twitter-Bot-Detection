@@ -29,7 +29,7 @@ auth.set_access_token(
     twitter_keys['access_token_key'], twitter_keys['access_token_secret'])
 
 api = tweepy.API(auth)
-
+print(api)
 
 def get_user_features(screen_name):
     '''
@@ -41,6 +41,7 @@ def get_user_features(screen_name):
     try:
         # Get user information from screen name
         user = api.get_user(screen_name)
+        print(user)
 
         # account features to return for predicton
         account_age_days = (datetime.now() - user.created_at).days
